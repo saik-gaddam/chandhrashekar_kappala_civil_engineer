@@ -52,7 +52,6 @@ nav {
 
 .nav-links ul li{
     list-style: none;
-    display: inline-block;/* Removes the dots */
     padding: 0;
     margin: 0;
     display: flex;         /* Makes the items align horizontally */
