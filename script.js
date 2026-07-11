@@ -21,3 +21,18 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
     }
   });
 });
+
+<script>
+document.getElementById('bookingForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevents the page from reloading
+    
+    // Logic to save the booking (e.g., sending to a server/database) goes here
+    
+    // Show the confirmation notification
+    const message = document.getElementById('confirmation-message');
+    message.style.display = 'block';
+    
+    // Optional: Hide form fields after submission
+    document.getElementById('bookingForm').style.display = 'none';
+});
+</script>
