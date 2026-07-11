@@ -1,3 +1,9 @@
+.bg {
+    background-image: url("chandhrashekar_portfolio/assets/bg.jpg")
+    bakground-size: cover;
+    height: 100vh
+}
+
 body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f9f9f9; color: #333; }
 header { background: #2c3e50; color: white; padding: 3rem; text-align: center; }
 
@@ -44,7 +50,7 @@ nav {
 }
 
 .nav-links ul li{
-    list-style-type: none;
+    list-style: none;
     display: inline-block;/* Removes the dots */
     padding: 0;
     margin: 0;
