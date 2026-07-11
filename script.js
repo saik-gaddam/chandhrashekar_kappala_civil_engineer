@@ -36,3 +36,9 @@ document.getElementById('bookingForm').addEventListener('submit', function(event
     document.getElementById('bookingForm').style.display = 'none';
 });
 </script>
+
+emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+    user_name: document.getElementById('name').value,
+    user_email: document.getElementById('email').value,
+    booking_date: document.getElementById('date').value
+});
