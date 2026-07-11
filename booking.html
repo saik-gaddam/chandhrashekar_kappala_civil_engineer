@@ -20,6 +20,9 @@
   <label for="name">Name:</label>
   <input type="text" id="name" name="name" required>
 
+  <label for="email">Email Address:</label>
+  <input type="email" id="email" name="email" required>
+ 
   <label for="date">Select Appointment Date:</label>
   <input type="text" id="appointmentDate" name="date" placeholder="Click to select date" required>
 
@@ -34,6 +37,10 @@
     minDate: "today"
   });
 </script>
+
+<div id="confirmation-message" style="display: none; padding: 20px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px; margin-top: 20px;">
+    Booking Confirmed! A civil engineer will reach out to you shortly via email.
+</div>
     
 </body>
 </html>
