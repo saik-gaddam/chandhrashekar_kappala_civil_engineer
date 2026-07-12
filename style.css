@@ -101,3 +101,36 @@ header { padding: 2rem 5%; display: flex; justify-content: space-between; align-
 
 .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 50px 5%; }
 .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+
+/* Style the toggle button */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show hamburger on mobile */
+    }
+
+    .nav-links {
+        display: none; /* Hide menu by default */
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Adjust based on your nav height */
+        left: 0;
+        background: #333;
+    }
+
+    .nav-links.active {
+        display: block; /* Show when 'active' class is added */
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        text-align: center;
+    }
+}
