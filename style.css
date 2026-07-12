@@ -107,7 +107,7 @@ header { padding: 2rem 5%; display: flex; justify-content: space-between; align-
     display: none;
     cursor: pointer;
     font-size: 24px;
-    color: #fff;
+    color: #000;
 }
 
 /* Mobile responsiveness */
@@ -115,7 +115,7 @@ header { padding: 2rem 5%; display: flex; justify-content: space-between; align-
     .menu-toggle {
         display: block !important; /* Forces visibility */
         position: absolute;
-        top: 15px; /* Adjust vertical position */
+        top: 20px; /* Adjust vertical position */
         right: 20px; /* Aligns to the right */
     }
 
