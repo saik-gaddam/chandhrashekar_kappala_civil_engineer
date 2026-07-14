@@ -104,6 +104,13 @@ nav a.active {
     width: 200px;
 }
 
+.booking {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
 /* Animations */
 @keyframes fadeIn { 
     from { opacity: 0; } 
