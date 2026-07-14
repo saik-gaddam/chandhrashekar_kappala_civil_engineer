@@ -184,4 +184,4 @@ header { padding: 2rem 5%; display: flex; justify-content: space-between; align-
     height: 100vh;
 }
 
-.logo { margin: 0; font-size: 1.5rem; font-weight: 800; color: var(--primary-color); }
+.logo { margin: 0; font-size: 1.5rem; font-weight: 800; color: black; }
