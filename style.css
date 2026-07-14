@@ -13,7 +13,7 @@ body {
 
 /* Background Utility Classes */
 .bg, .bg-about, .bg-project, .bg-contact, .bg-booking {
-    background-size: cover; /* Fixed typo */
+    background-size: cover !important; /* Fixed typo */
     background-position: center;
     position: relative;
     height: 100vh;
@@ -33,6 +33,17 @@ header {
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
+}
+
+#mobile-menu {
+    display: block !important;
+    color: #ffffff !important; /* Forces white color */
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
 }
 
 nav {
@@ -97,7 +108,7 @@ nav a.active {
     color: #000000 !important;
 }
 
-#hero { color: #fff; padding: 50px; } /* Fixed typo */
+#hero { color: #ffffff !important; padding: 50px; } /* Fixed typo */
 
 .main-img {
     height: 200px;
