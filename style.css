@@ -1,16 +1,38 @@
-.bg {
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/bg.jpg);
-    bakground-size: cover;
+/* Global Reset & Base Styles */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: 'Inter', 'Segoe UI', sans-serif; 
+    line-height: 1.6; 
+    color: #333; 
+}
+
+/* Background Utility Classes */
+.bg, .bg-about, .bg-project, .bg-contact, .bg-booking {
+    background-size: cover; /* Fixed typo */
     background-position: center;
     position: relative;
     height: 100vh;
     width: 100%;
 }
 
-body { font-family: 'Segoe UI', sans-serif; margin: 0;}
-header {color: white; padding: 3rem; text-align: center; }
-p {
-    font-size:20px;
+.bg { background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/bg.jpg); }
+.bg-about { background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/bg-2.jpg); }
+.bg-project { background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/bg-3.jpg); }
+.bg-contact { background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/contact.jpg); }
+.bg-booking { background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/appointment.jpg); }
+
+/* Header & Navigation */
+header { 
+    color: white; 
+    padding: 2rem 5%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
 }
 
 nav {
@@ -18,12 +40,6 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 2px 6px;
-    
-}
-
-a {
-    text-decoration: none;
-    color: #333;
 }
 
 nav a {
@@ -32,46 +48,25 @@ nav a {
     margin: 0 15px;
     font-weight: bold;
     transition: color 0.3s;
-    margin-left: 15px;
 }
 
-/* Style for the current page link */
 nav a.active {
-    color: #e67e22; /* Choose your highlight color */
-    font-weight: bold;
-    border-bottom: 2px solid #e67e22; /* Adds a nice line under the active link */
-}
-
-.nav-links {
-    flex: 0 1 auto;
-    text-align: right;
+    color: #e67e22;
+    border-bottom: 2px solid #e67e22;
 }
 
 .nav-links ul {
-    display: flex; /* Ensures the list items (Home, About, etc.) stay in a row */
+    display: flex;
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
-.nav-links ul li{
-    list-style: none;
+.nav-links ul li {
     padding: 8px 12px;
-    margin: 0;
-    display: inline-block;         /* Makes the items align horizontally */
-    gap: 20px;
     position: relative;
-    margin-left: 20px;/* Adds space between the links */
-}
-
-.nav-links ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 13px;
+    margin-left: 20px;
 }
 
 .nav-links ul li::after {
-    color: red;
     content: '';
     width: 0%;
     height: 2px;
@@ -81,152 +76,62 @@ nav a.active {
     transition: 0.5s;
 }
 
-.nav-links ul li:hover::after {
-    width: 100%;
-}
+.nav-links ul li:hover::after { width: 100%; }
 
-section { padding: 40px 20px; max-width: 800px; margin: auto; animation: fadeIn 1.2s ease-in-out; }
-
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
-.gallery-item img { width: 100%; border-radius: 5px; transition: transform 0.3s; }
-.gallery-item img:hover { transform: scale(1.05); }
-
-form { display: flex; flex-direction: column; gap: 15px; }
-input, textarea { padding: 12px; border: 1px solid #ddd; border-radius: 4px; }
-button { background: #e67e22; color: white; padding: 12px; border: none; cursor: pointer; border-radius: 4px; }
-
-footer { text-align: center; padding: 20px; background: #333; color: white; }
-.social-links a { color: white; margin: 0 10px; font-size: 30px; }
-
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; }
-
-header { padding: 2rem 5%; display: flex; justify-content: space-between; align-items: center; }
-
-#hero {colr: #fff; padding: 50px;}
-#hero h1 { font-size: 20px; margin-bottom: 10px; }
-
-.btn { 
-    display: inline-block; padding: 12px 24px; background: #0056b3; 
-    color: white; text-decoration: none; border-radius: 5px; margin-top: 20px; 
-}
-
-.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 50px 5%; }
-.card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-
-/* Style the toggle button */
-.menu-toggle {
-    display: none;
+/* Buttons & Interactive Elements */
+.knowmore-button {
+    background: transparent !important;
+    border: 2px solid #ffffff !important; /* Fixed: Removed 'outline' */
+    color: #ffffff !important;
+    padding: 12px 24px;
+    font-size: 16px;
     cursor: pointer;
-    font-size: 24px;
-    color: #000;
-    padding: 10px;
+    transition: 0.3s;
+    border-radius: 4px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.knowmore-button:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+#hero { color: #fff; padding: 50px; } /* Fixed typo */
+
+/* Animations */
+@keyframes fadeIn { 
+    from { opacity: 0; } 
+    to { opacity: 1; } 
+}
+
+section { 
+    padding: 40px 20px; 
+    max-width: 800px; 
+    margin: auto; 
+    animation: fadeIn 1.2s ease-in-out; 
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     .menu-toggle {
+        display: block !important;
         color: #fff;
-        display: block !important; /* Forces visibility */
         position: absolute;
-        top: 20px; /* Adjust vertical position */
-        right: 20px; /* Aligns to the right */
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
     }
 
     .nav-links {
-        display: none; /* Hide menu by default */
+        display: none;
         width: 100%;
         position: absolute;
-        top: 60px; /* Adjust based on your nav height */
+        top: 60px;
         left: 0;
         background: #fff;
-        color: black;
     }
 
-    .nav-links.active {
-        display: block; /* Show when 'active' class is added */
-    }
-
-    .nav-links ul {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        list-style: none;
-        padding: 0;
-    }
-
-    #hero {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .main-img {
-        height: 180px;
-        width: 180px;
-        border-radius: 10px;
-        border: 5px;
-    }
+    .nav-links.active { display: block; }
+    .nav-links ul { flex-direction: column; text-align: center; }
 }
-
-.main-img {
-    height: 300px;
-    width: 300px;
-    border-color: white;
-    border-radius: 10px;
-    border: 5px;
-    margin-left: 10px;
-}
-
-.bg-about {
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/bg-2.jpg);
-    bakground-size: cover;
-    background-position: center;
-    position: relative;
-    height: 100vh;
-}
-
-.bg-project {
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/bg-3.jpg);
-    bakground-size: cover;
-    background-position: center;
-    position: relative;
-    height: 100vh;
-}
-
-.bg-contact {
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/contact.jpg);
-    bakground-size: cover;
-    background-position: center;
-    position: relative;
-    height: 100vh;
-}
-
-.bg-booking {
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/appointment.jpg);
-    bakground-size: cover;
-    background-position: center;
-    position: relative;
-    height: 100vh;
-}
-
- .knowmore-button {
-       background: transparent !important;   /* Makes the background see-through */
-        border: outline 2px solid #ffffff !important;       /* White border (adjust color as needed) */
-        color: #ffffff !important;                  /* Text color */
-        padding: 12px 24px;              /* Space inside the button */
-        font-size: 16px;
-        cursor: pointer;                 /* Changes mouse to a pointer hand */
-        transition: 0.3s;                /* Makes the hover effect smooth */
-        border-radius: 4px;
-    }
-
-.knowmore-button:hover {
-    background-color: #ffffff;    /* Optional: fill color on hover */
-    color: #000000;               /* Optional: change text color on hover */
-}
-
-.home-description {
-    
-}    
