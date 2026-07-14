@@ -211,14 +211,14 @@ header { padding: 2rem 5%; display: flex; justify-content: space-between; align-
 }
 
  .knowmore-button {
-        text-decoration: none;
-        color: #fff;
-        padding: 20px;
-        background: transparent;
-        font-size: 15px;
-        border: 1px solid #fff;
-        position: relative:
-        cursor: pointer;
+       background: transparent;          /* Makes the background see-through */
+        border: 2px solid #ffffff;       /* White border (adjust color as needed) */
+        color: #ffffff;                  /* Text color */
+        padding: 12px 24px;              /* Space inside the button */
+        font-size: 16px;
+        cursor: pointer;                 /* Changes mouse to a pointer hand */
+        transition: 0.3s;                /* Makes the hover effect smooth */
+        border-radius: 4px;
     }
 
 .home-description {
