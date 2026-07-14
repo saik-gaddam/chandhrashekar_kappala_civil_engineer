@@ -205,7 +205,7 @@ header { padding: 2rem 5%; display: flex; justify-content: space-between; align-
     height: 100vh;
 }
 
-    button {
+    knowmore-button {
         color: #fff;
         padding: 20px;
         background: transparent;
