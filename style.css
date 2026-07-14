@@ -99,6 +99,11 @@ nav a.active {
 
 #hero { color: #fff; padding: 50px; } /* Fixed typo */
 
+.main-img {
+    height: 200px;
+    width: 200px;
+}
+
 /* Animations */
 @keyframes fadeIn { 
     from { opacity: 0; } 
@@ -134,4 +139,9 @@ section {
 
     .nav-links.active { display: block; }
     .nav-links ul { flex-direction: column; text-align: center; }
+
+    .main-img {
+        height: 150px;
+        width: 150px;
+    }
 }
