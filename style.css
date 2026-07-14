@@ -1,6 +1,5 @@
 .bg {
     background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/bg.jpg);
-    background-position: center;
     bakground-size: cover;
     min-height: 100vh
     width: 100%;
@@ -153,9 +152,42 @@ header { padding: 2rem 5%; display: flex; justify-content: space-between; align-
 }
 
 .main-img {
-    height: 100px;
-    width: 100px;
+    height: 300px;
+    width: 300px;
     border-color: white;
     border-radius: 10px;
     border: 5px;
+    margin-left: 10px;
+}
+
+.bg-about {
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/bg-2.jpg);
+    bakground-size: cover;
+    min-height: 100vh
+    width: 100%;
+    position: relative;
+}
+
+.bg-project {
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/bg-3.jpg);
+    bakground-size: cover;
+    min-height: 100vh
+    width: 100%;
+    position: relative;
+}
+
+.bg-contact {
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/contact.jpg);
+    bakground-size: cover;
+    min-height: 100vh
+    width: 100%;
+    position: relative;
+}
+
+.bg-booking {
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/booking.jpg);
+    bakground-size: cover;
+    min-height: 100vh
+    width: 100%;
+    position: relative;
 }
