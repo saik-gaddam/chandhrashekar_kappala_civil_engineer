@@ -1,6 +1,8 @@
 .bg {
     background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/bg.jpg);
     bakground-size: cover;
+    background-position: center;
+    position: relative;
     height: 100vh
 }
 
@@ -95,7 +97,7 @@ body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; }
 
 header { padding: 2rem 5%; display: flex; justify-content: space-between; align-items: center; }
 
-#hero { padding: 100px 5%; text-align: center; color: white;}
+#hero { padding: 50px 5%; text-align: center; color: #fff; transform: translate(-50%,-50%); position: absolute;}
 #hero h1 { font-size: 3rem; margin-bottom: 10px; }
 
 .btn { 
@@ -175,26 +177,42 @@ header { padding: 2rem 5%; display: flex; justify-content: space-between; align-
 .bg-about {
     background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/bg-2.jpg);
     bakground-size: cover;
+    background-position: center;
+    position: relative;
     height: 100vh;
 }
 
 .bg-project {
     background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/bg-3.jpg);
     bakground-size: cover;
+    background-position: center;
+    position: relative;
     height: 100vh;
 
 .bg-contact {
     background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/contact.jpg);
     bakground-size: cover;
+    background-position: center;
+    position: relative;
     height: 100vh;
 }
 
 .bg-booking {
     background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/appointment.jpg);
     bakground-size: cover;
+    background-position: center;
+    position: relative;
     height: 100vh;
 }
 
-.logo {
-    font-size: 200px;
-}
+    button {
+        color: #fff;
+        padding: 20px;
+        background: transparent;
+        font-size: 15px;
+        border: 1px solid #fff;
+    }
+
+.home-description {
+    
+}    
