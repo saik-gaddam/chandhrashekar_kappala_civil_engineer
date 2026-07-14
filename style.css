@@ -136,7 +136,7 @@ section {
     }
 
     .nav-links.active {
-        display: block;
+        display: block !important;
     }
 
     /* FIX: Change link color to black so they are visible on the white background */
