@@ -35,6 +35,13 @@ nav a {
     margin-left: 15px;
 }
 
+/* Style for the current page link */
+nav a.active {
+    color: #e67e22; /* Choose your highlight color */
+    font-weight: bold;
+    border-bottom: 2px solid #e67e22; /* Adds a nice line under the active link */
+}
+
 .nav-links {
     flex: 0 1 auto;
     text-align: right;
