@@ -46,3 +46,14 @@ function triggerLocalNotification(name, date) {
         new Notification(title, options);
     }
 }
+
+// Mobile Menu Toggle Logic
+const mobileMenu = document.getElementById('mobile-menu');
+const navList = document.getElementById('nav-list');
+
+if (mobileMenu) {
+    mobileMenu.addEventListener('click', () => {
+        navList.classList.toggle('active');
+        mobileMenu.classList.toggle('open');
+    });
+}
