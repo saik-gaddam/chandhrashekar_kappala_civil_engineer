@@ -74,7 +74,6 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
     .nav-links ul { flex-direction: column; }
     .nav-links ul li { margin: 10px 0; }
 
-    @media (max-width: 768px) {
     /* Add these inside the bracket */
     .menu-toggle {
         display: flex; /* Shows the 3 lines only on mobile */
@@ -94,5 +93,32 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
     .nav-links.active {
         display: block !important;
     }
+
+    /* Make social and contact links easy to click */
+.social-icons a, .footer-contact-group a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px; /* Minimum recommended touch size */
+    min-height: 44px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #ffffff !important;
+    font-size: 22px; /* Makes icons bigger */
+    transition: transform 0.2s;
+}
+
+.footer-contact-group a {
+    font-size: 18px;
+}
+
+.social-icons a:hover, .footer-contact-group a:hover {
+    transform: scale(1.2);
+    color: #e67e22 !important;
+}
+
+/* Specific color for WhatsApp on hover */
+.whatsapp:hover {
+    color: #25d366 !important;
 }
 }
