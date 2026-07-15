@@ -356,7 +356,7 @@ main {
                                               /* Below code is belong to booking.html */
 
 .appointment-booking {
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/appointment.jpg.jpg'); /* ADD IMAGE LINK HERE */
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/appointment.jpg'); /* ADD IMAGE LINK HERE */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
