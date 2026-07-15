@@ -1,3 +1,136 @@
+                            /* Below this code belongs to index.html*/
+
+/* Background Image Setup */
+.bg {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./assets/hero-2.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar Styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.nav-links ul li a:hover, 
+.nav-links ul li a.active {
+    color: #4cc9f0;
+}
+
+/* Hero Section */
+#hero {
+    padding: 60px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.hero-flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+}
+
+.hero-text-box h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 20px;
+}
+
+.hero-image-box img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Animations */
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Footer Styling */
+.main-footer {
+    background: #111;
+    color: white;
+    padding: 40px 8%;
+    text-align: center;
+}
+
+.footer-contact-group {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-link {
+    color: #4cc9f0;
+    text-decoration: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 968px) {
+    .hero-flex-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        display: none; /* Usually toggled by JS */
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+}
+
+                                /* Below this code belongs to projets.html*/
+
 /* Background Image Setup */
 .bg-3 {
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('YOUR_IMAGE_LINK_HERE'); /* ADD IMAGE LINK HERE */
