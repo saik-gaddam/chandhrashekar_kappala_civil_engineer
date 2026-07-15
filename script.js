@@ -1,59 +1,80 @@
-// Request browser permission for push notifications as soon as the app opens
+/**
+ * Website Interaction Script
+ * Handles: Mobile Menu, Smooth Scroll, and Hover Effects
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
-    if ('Notification' in window) {
-        if (Notification.permission !== 'granted' && Notification.permission !== 'denied') {
-            Notification.requestPermission();
-        }
+    
+    // 1. Mobile Menu Toggle
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+
+    if (mobileMenu && navList) {
+        mobileMenu.addEventListener('click', () => {
+            // Toggle the 'active' class which we defined in CSS
+            navList.classList.toggle('active');
+            
+            // Optional: Animate the hamburger icon bars
+            const spans = mobileMenu.querySelectorAll('span');
+            if (navList.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Close menu when a link is clicked (Mobile UX improvement)
+        const navLinks = navList.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+                // Reset hamburger icon
+                const spans = mobileMenu.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            });
+        });
     }
-});
 
-// Intercept form submission
-document.getElementById('appointmentForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevents default web page refresh
-
-    const appointmentData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        date: document.getElementById('date').value
-    };
-
-    // 1. Send the data to your Node.js backend
-    fetch('http://localhost:3000/api/appointments', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(appointmentData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        // 2. Trigger the local browser notification once the server confirms receipt
-        triggerLocalNotification(appointmentData.name, appointmentData.date);
-        this.reset(); // Clear form
-    })
-    .catch(error => console.error('Error sending data to server:', error));
-});
-
-// Function to handle browser-level notifications
-function triggerLocalNotification(name, date) {
-    if (!('Notification' in window)) return;
-
-    const title = "Appointment Submitted! 📅";
-    const options = {
-        body: `Consultation confirmed for ${name} on ${date}.`,
-        vibrate: [200, 100, 200]
-    };
-
-    if (Notification.permission === 'granted') {
-        new Notification(title, options);
-    }
-}
-
-// Mobile Menu Toggle Logic
-const mobileMenu = document.getElementById('mobile-menu');
-const navList = document.getElementById('nav-list');
-
-if (mobileMenu) {
-    mobileMenu.addEventListener('click', () => {
-        navList.classList.toggle('active');
-        mobileMenu.classList.toggle('open');
+    // 2. Smooth Scrolling for Navigation Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
-}
+
+    // 3. Project Card Hover Interaction (Fallback for non-hover devices)
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.addEventListener('touchstart', function() {
+            this.classList.toggle('hover-effect');
+        }, {passive: true});
+    });
+
+    // 4. Scroll Header Effect
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            nav.style.background = 'rgba(0, 0, 0, 0.9)';
+            nav.style.padding = '10px 5%';
+        } else {
+            nav.style.background = 'rgba(255, 255, 255, 0.1)';
+            nav.style.padding = '15px 5%';
+        }
+    });
+
+});
