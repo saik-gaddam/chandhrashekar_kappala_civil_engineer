@@ -2,7 +2,7 @@
 
 /* Background Image Setup */
 .bg {
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./assets/hero-2.jpg'); 
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/bg.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -133,7 +133,7 @@ nav {
 
 /* Background Image Setup */
 .bg-3 {
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('YOUR_IMAGE_LINK_HERE'); /* ADD IMAGE LINK HERE */
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/bg-3.jpg'); /* ADD IMAGE LINK HERE */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
