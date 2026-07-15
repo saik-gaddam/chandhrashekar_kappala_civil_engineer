@@ -14,7 +14,7 @@ body {
 }
 
 /* --- Layout Containers --- */
-.bg, .bg-about, .bg-project, .bg-contact, .bg-booking {
+.bg, .bg-about, .bg-contact, .bg-booking {
     position: relative;
     min-height: 100vh;
     width: 100%;
@@ -249,4 +249,64 @@ main {
         display: block;
         margin: 10px 0;
     }
+}
+
+                                                        /* Below this css is belongs to projects.html*/
+
+/* Container & Centering */
+.bg-project {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+}
+
+/* Heading Animations */
+h1 {
+    font-size: 3rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+/* Grid for 3 Projects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin-top: 50px;
+}
+
+/* Project Cards with staggered animation */
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    opacity: 0;
+    animation: slideUp 0.8s ease forwards;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.2s; }
+.project-card:nth-child(2) { animation-delay: 0.4s; }
+.project-card:nth-child(3) { animation-delay: 0.6s; }
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+}
+
+/* Keyframes */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
 }
