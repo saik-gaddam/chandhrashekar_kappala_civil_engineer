@@ -18,6 +18,7 @@ body {
     position: relative;
     height: 100vh;
     width: 100%;
+    padding: 20px;
 }
 
 .bg { background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/bg.jpg); }
@@ -171,10 +172,10 @@ section {
         padding: 20px;
     }
 
-    .booking {
+    #bookingForm {
         display: flex;
         flex-direction: column;
         align-items: center;
-        position: absolute;
+        position: relative;
     }
 }
