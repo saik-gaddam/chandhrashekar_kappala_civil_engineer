@@ -1,29 +1,21 @@
-const express = require('express');
-const cors = require('cors');
-const app = express();
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
 
-// Middleware
-app.use(cors()); // Allows your frontend website to securely communicate with this backend
-app.use(express.json()); // Allows Node.js to read the JSON data sent from fetch()
+    if (mobileMenu && navList) {
+        mobileMenu.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevents the click from closing immediately
+            navList.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+            console.log("Menu toggled!"); // You can check this in the console (F12)
+        });
 
-// POST Endpoint to receive appointment data
-app.post('/api/appointments', (req, res) => {
-    const { name, email, date } = req.body;
-
-    // Server-side action: Log the notification directly to your terminal terminal
-    console.log(`\n🔔 NEW APPOINTMENT RECEIVED on Server!`);
-    console.log(`👤 Client Name: ${name}`);
-    console.log(`✉️ Email: ${email}`);
-    console.log(`📅 Date Booked: ${date}\n`);
-
-    // TODO: Add database logic (e.g., MongoDB/MySQL) or third-party email notification logic here
-
-    // Send success response back to script.js
-    res.status(200).json({ success: true, message: 'Appointment securely logged on the server.' });
-});
-
-// Set the server port
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`🚀 Back-end server is running actively on http://localhost:${PORT}`);
+        // Optional: Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !navList.contains(e.target)) {
+                navList.classList.remove('active');
+                mobileMenu.classList.remove('open');
+            }
+        });
+    }
 });
