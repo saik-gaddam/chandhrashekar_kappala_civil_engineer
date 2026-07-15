@@ -1,4 +1,4 @@
-                            /* Below this code belongs to index.html*/
+                            /* Below this code belongs to index.html */
 
 /* General Reset */
 * {
@@ -202,7 +202,7 @@ main {
     .hero-text-box h1 { font-size: 2.2rem; }
 }
 
-                                /* Below this code belongs to projets.html*/
+                                /* Below this code belongs to projets.html */
 
 /* Background Image Setup */
 .bg-3 {
@@ -350,3 +350,58 @@ main {
     .menu-toggle.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
     .menu-toggle.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 }
+
+
+                                              /* Below code is belong to booking.html */
+
+/* Glassmorphism Card Style */
+.glass-form-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, #4cc9f0, #4361ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.form-control, .form-select {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.form-control:focus, .form-select:focus {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-color: #4cc9f0;
+    box-shadow: 0 0 10px rgba(76, 201, 240, 0.3);
+}
+
+.submit-btn {
+    background: linear-gradient(90deg, #4cc9f0, #4361ee);
+    border: none;
+    color: white;
+    padding: 15px;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(67, 97, 238, 0.4);
+}
+
+/* Label color */
+.form-label { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
