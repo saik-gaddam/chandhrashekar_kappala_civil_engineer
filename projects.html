@@ -2,53 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Projects</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - KCS</title>
+    <link rel="stylesheet" href="style.css"> <!-- Replace with your CSS file name -->
 </head>
 <body>
+
     <div class="bg-project bg-3">
-    <div>
-        <!-- Navigation -->
-        <nav>
-            <div>
+        <div class="main-container">
+            <!-- Navigation -->
+            <nav class="navbar">
                 <a href="index.html" class="logo">KCS</a>
-            </div>
-            <div class="menu-toggle" id="mobile-menu">
-                 ☰
-            </div>
-            <div class="nav-links">
-                <ul>
+                
+                <!-- Hamburger Icon (Visible on mobile) -->
+                <div class="menu-toggle" id="mobile-menu">
+                     <span class="bar"></span>
+                     <span class="bar"></span>
+                     <span class="bar"></span>
+                </div>
+            
+                <!-- Nav Links -->
+                <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="booking.html">Book Appointment</a></li>
                 </ul>
-            </div>
-        </nav>
-        
-        <!-- Main Heading & Description (Centered) -->
-        <div class="header-section">
-            <h1>My Projects</h1>
-            <p>Explore my latest engineering work and technical solutions.</p>
-        </div>
+            </nav>
+            
+            <div class="content-wrapper">
+                <!-- Centered Heading -->
+                <div class="header-section">
+                    <h1>My Projects</h1>
+                    <p>Explore my latest engineering work and technical solutions.</p>
+                </div>
 
-        <!-- 3 Projects Grid -->
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Smart Irrigation System</h3>
-                <p>An automated water management system using IoT sensors to optimize crop yield and reduce water waste.</p>
-            </div>
-            <div class="project-card">
-                <h3>Electric Vehicle Charger</h3>
-                <p>A high-efficiency solar-powered EV charging station with smart grid integration for sustainable transport.</p>
-            </div>
-            <div class="project-card">
-                <h3>Home Automation Hub</h3>
-                <p>A centralized control system for smart home devices, focusing on security and energy efficiency.</p>
+                <!-- 3 Projects Grid -->
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Smart Irrigation System</h3>
+                        <p>An automated water management system using IoT sensors to optimize crop yield and reduce water waste.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Electric Vehicle Charger</h3>
+                        <p>A high-efficiency solar-powered EV charging station with smart grid integration for sustainable transport.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Home Automation Hub</h3>
+                        <p>A centralized control system for smart home devices, focusing on security and energy efficiency.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-    <script src="script.js"></script>
+
+    <!-- Script for Hamburger Menu -->
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuToggle.onclick = function() {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        };
+    </script>
 </body>
 </html>
