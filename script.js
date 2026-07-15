@@ -1,33 +1,48 @@
+// Request browser permission for push notifications as soon as the app opens
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu Logic
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (mobileMenu && navLinks) {
-        mobileMenu.addEventListener('click', () => {
-            const isActive = navLinks.classList.toggle('active');
-            // Accessibility: Update ARIA state
-            mobileMenu.setAttribute('aria-expanded', isActive);
-        });
-    }
-
-    // Booking Form Logic
-    const bookingForm = document.getElementById('bookingForm');
-    if (bookingForm) {
-        bookingForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Basic Validation Check
-            if (!this.checkValidity()) {
-                alert('Please fill out all required fields.');
-                return;
-            }
-
-            // Implementation of a cleaner feedback mechanism
-            console.log('Form submitted successfully');
-            alert('Thank you! Your appointment request has been submitted.');
-            
-            this.reset();
-        });
+    if ('Notification' in window) {
+        if (Notification.permission !== 'granted' && Notification.permission !== 'denied') {
+            Notification.requestPermission();
+        }
     }
 });
+
+// Intercept form submission
+document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevents default web page refresh
+
+    const appointmentData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        date: document.getElementById('date').value
+    };
+
+    // 1. Send the data to your Node.js backend
+    fetch('http://localhost:3000/api/appointments', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(appointmentData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        // 2. Trigger the local browser notification once the server confirms receipt
+        triggerLocalNotification(appointmentData.name, appointmentData.date);
+        this.reset(); // Clear form
+    })
+    .catch(error => console.error('Error sending data to server:', error));
+});
+
+// Function to handle browser-level notifications
+function triggerLocalNotification(name, date) {
+    if (!('Notification' in window)) return;
+
+    const title = "Appointment Submitted! 📅";
+    const options = {
+        body: `Consultation confirmed for ${name} on ${date}.`,
+        vibrate: [200, 100, 200]
+    };
+
+    if (Notification.permission === 'granted') {
+        new Notification(title, options);
+    }
+}
