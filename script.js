@@ -7,67 +7,50 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Unified Mobile Menu Handler
     const mobileMenu = document.getElementById('mobile-menu');
     
-    // This looks for the menu using the ID OR the common classes you've used
+    // Looks for the menu using ID or common classes (Works for all your pages)
     const navList = document.getElementById('nav-list') || 
                     document.querySelector('.nav-links') || 
                     document.querySelector('.nav-menu');
 
     if (mobileMenu && navList) {
         mobileMenu.addEventListener('click', () => {
-            const isOpen = navList.classList.toggle('active');
+            // Toggle classes
+            navList.classList.toggle('active');
             mobileMenu.classList.toggle('is-open');
-            
-            // Animate hamburger spans if they exist (works for both <span> and .bar)
-            const spans = mobileMenu.querySelectorAll('span, .bar');
-            if (spans.length >= 3) {
-                if (isOpen) {
-                    spans[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
-                    spans[1].style.opacity = '0';
-                    spans[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
-                } else {
-                    spans[0].style.transform = 'none';
-                    spans[1].style.opacity = '1';
-                    spans[2].style.transform = 'none';
-                }
-            }
+            mobileMenu.classList.toggle('is-active'); // Added to match common CSS naming
         });
 
-        // Auto-close menu when a link is clicked (Mobile UX improvement)
+        // Auto-close menu when a link is clicked
         navList.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navList.classList.remove('active');
                 mobileMenu.classList.remove('is-open');
-                const spans = mobileMenu.querySelectorAll('span, .bar');
-                spans.forEach(s => {
-                    s.style.transform = 'none';
-                    s.style.opacity = '1';
-                });
+                mobileMenu.classList.remove('is-active');
             });
         });
     }
 
     // 2. Dynamic Navbar Background on Scroll
-    const nav = document.querySelector('nav');
+    const nav = document.querySelector('nav') || document.querySelector('.navbar');
     if (nav) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 nav.style.background = 'rgba(0, 0, 0, 0.9)';
                 nav.style.padding = '10px 5%';
             } else {
-                // If you add class="light-page" to <body> on about/contact, 
-                // this ensures the nav is visible.
                 const isLightPage = document.body.classList.contains('light-page');
-                nav.style.background = isLightPage ? 'rgba(255, 255, 255, 0.9)' : 'rgba(255, 255, 255, 0.1)';
+                // Standard background for Booking Page/Projects
+                nav.style.background = isLightPage ? 'rgba(255, 255, 255, 0.9)' : 'transparent';
                 nav.style.padding = '15px 5%';
             }
         });
     }
 
-    // 3. Smooth Scroll for Anchor Links (e.g., href="#contact")
+    // 3. Smooth Scroll for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+            if (targetId === '#' || targetId === '') return;
             const target = document.querySelector(targetId);
             if (target) {
                 e.preventDefault();
