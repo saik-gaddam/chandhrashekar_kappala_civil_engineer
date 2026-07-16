@@ -85,6 +85,14 @@
 
     <script src="script.js"></script>
     <!-- Add this to every page -->
-<script src="navbar.js" defer></script>
+<script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuToggle.onclick = function() {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        };
+    </script>
 </body>
 </html>
