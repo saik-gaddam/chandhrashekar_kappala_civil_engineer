@@ -4,121 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Google Fonts -->
 </head>
 <body>
-    <div class="bg-about bg-3">
-        <div>
-             <nav class="navbar">
-                <a href="index.html" class="logo">KCS</a>
-                
-                <!-- Hamburger Icon (Visible on mobile) -->
-                <div class="menu-toggle" id="mobile-menu">
-                     <span class="bar"></span>
-                     <span class="bar"></span>
-                     <span class="bar"></span>
-                </div>
-            
-                <!-- Nav Links -->
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="booking.html">Book Appointment</a></li>
-                </ul>
-            </nav>
-    
-            <section class="engineer-profile">
-    <!-- Hero Section -->
-    <div class="profile-hero">
-        <div class="container">
-            <h1 class="reveal-text">K. Chandhrashekar</h1>
-            <p class="subtitle">Structural & Civil Engineer | 10+ Years of Excellence</p>
-        </div>
+    <div class="page-bg-container about-page">
+        <nav class="navbar">
+            <a href="index.html" class="logo">CIVIL<span>ENG</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+            </ul>
+        </nav>
+
+        <section class="profile-hero">
+            <h1 class="reveal-text">About Our Mission</h1>
+            <p>Dedicated to excellence in civil engineering and structural design since 2010.</p>
+        </section>
     </div>
-
-    <div class="container">
-        <!-- Career Section -->
-        <div class="section-box">
-            <h2 class="section-title">Career Journey</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Senior Structural Engineer</h3>
-                        <span>2018 - Present</span>
-                        <p>Leading large-scale infrastructure projects, ensuring structural integrity and sustainable design practices.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Site Engineer</h3>
-                        <span>2014 - 2018</span>
-                        <p>Managed on-site operations for residential complexes, focusing on quality control and safety standards.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Certifications Panel -->
-        <div class="section-box">
-            <h2 class="section-title">Professional Certifications</h2>
-            <div class="cert-grid">
-                <div class="cert-card">
-                    <i class="icon-cert">🏆</i>
-                    <h3>Chartered Engineer (IEI)</h3>
-                    <p>Professional accreditation for excellence in engineering practice.</p>
-                </div>
-                <div class="cert-card">
-                    <i class="icon-cert">🏗️</i>
-                    <h3>PMP® Certification</h3>
-                    <p>Advanced Project Management for construction lifecycle.</p>
-                </div>
-                <div class="cert-card">
-                    <i class="icon-cert">📜</i>
-                    <h3>AutoCAD & Revit Expert</h3>
-                    <p>Certified in advanced 3D modeling and BIM technologies.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Works Section -->
-        <div class="section-box">
-            <h2 class="section-title">Key Projects</h2>
-            <div class="work-grid">
-                <div class="work-item" style="background-image: url('project1.jpg');">
-                    <div class="work-overlay">
-                        <h3>Urban Skybridge</h3>
-                        <p>Structural Design & Analysis</p>
-                    </div>
-                </div>
-                <div class="work-item" style="background-image: url('project2.jpg');">
-                    <div class="work-overlay">
-                        <h3>Green Valley Estate</h3>
-                        <p>Sustainable Residential Planning</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-            
-        </div>
-    </div>
-    <script src="script.js"></script>
-    <!-- Add this to every page -->
-<script>
-        const menuToggle = document.getElementById('mobile-menu');
-        const navMenu = document.querySelector('.nav-menu');
-
-        menuToggle.onclick = function() {
-            menuToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        };
-    </script>
 </body>
 </html>
