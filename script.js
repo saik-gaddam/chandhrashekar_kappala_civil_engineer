@@ -60,3 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Inside script.js
+console.log("Script is connected!");
+
+// Test if it can access an element that has CSS applied
+const menuToggle = document.querySelector('.menu-toggle');
+if (menuToggle) {
+    console.log("Found .menu-toggle, connection is working.");
+} else {
+    console.log("Could not find .menu-toggle. Check your HTML class names.");
+}
