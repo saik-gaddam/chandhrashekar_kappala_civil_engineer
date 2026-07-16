@@ -3,96 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Appointment | KCS</title>
+    <title>Book Appointment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <div class="appointment-booking bg-3">
+    <div class="page-bg-container booking-page">
         <nav class="navbar">
-                <a href="index.html" class="logo">KCS</a>
-                
-                <!-- Hamburger Icon (Visible on mobile) -->
-                <div class="menu-toggle" id="mobile-menu">
-                     <span class="bar"></span>
-                     <span class="bar"></span>
-                     <span class="bar"></span>
-                </div>
-            
-                <!-- Nav Links -->
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="booking.html" class="active">Book Appointment</a></li>
-                </ul>
-            </nav>
+            <a href="index.html" class="logo">CIVIL<span>ENG</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="booking.html" class="active">Booking</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
 
-        <main class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-md-7">
-                    <div class="booking-card">
-                        <h2 class="text-center mb-4">Book a Consultation</h2>
-                        
-                        <!-- FormSubmit.co - Replace with YOUR email -->
-                        <form action="https://formsubmit.co/kcslandsurveys@gmail.com" method="POST">
-                            
-                            <!-- Security: Honeypot (Anti-Spam) -->
-                            <input type="text" name="_honey" style="display:none">
-                            
-                            <!-- Security: Disable Captcha if you want it faster -->
-                            <input type="hidden" name="_captcha" value="true">
-
-                            <!-- Redirect: Page to go to after submission -->
-                            <input type="hidden" name="_next" value="https://saik-gaddam.github.io/kappala_chandhrashekar_civil_engineer/thankyou.html">
-
-                            <div class="mb-3">
-                                <label class="form-label">Client Name</label>
-                                <input type="text" name="Name" class="form-control" required placeholder="Enter full name">
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label class="form-label">Contact Number</label>
-                                    <input type="tel" name="Phone" class="form-control" required placeholder="+91...">
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label class="form-label">Service Required</label>
-                                    <select name="Service" class="form-select">
-                                        <option>Structural Design</option>
-                                        <option>Land Survey</option>
-                                        <option>Site Management</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">Preferred Date</label>
-                                <input type="date" name="Requested_Date" class="form-control" required>
-                            </div>
-
-                            <div class="mb-4">
-                                <label class="form-label">Project Description</label>
-                                <textarea name="Message" class="form-control" rows="3" placeholder="Describe your project..."></textarea>
-                            </div>
-
-                            <button type="submit" class="booking-btn">Submit Request</button>
-                        </form>
-                    </div>
-                </div>
+        <div class="container">
+            <div class="booking-card" style="max-width: 600px; margin: 100px auto;">
+                <h2>Schedule a Consultation</h2>
+                <form>
+                    <input type="text" placeholder="Full Name" class="form-control" style="width:100%; margin:10px 0;">
+                    <input type="email" placeholder="Email Address" class="form-control" style="width:100%; margin:10px 0;">
+                    <button type="submit" class="booking-btn">Submit Request</button>
+                </form>
             </div>
-        </main>
+        </div>
     </div>
-    <script src="script.js"></script>
-    <!-- Add this to every page -->
-<script>
-        const menuToggle = document.getElementById('mobile-menu');
-        const navMenu = document.querySelector('.nav-menu');
-
-        menuToggle.onclick = function() {
-            menuToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        };
-    </script>
 </body>
 </html>
