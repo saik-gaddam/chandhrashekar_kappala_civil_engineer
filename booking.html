@@ -1,10 +1,45 @@
-<main class="container">
-    <h2>Book an Appointment</h2>
-    <!-- Use Formspree.io for easy email notifications without a backend -->
-    <form action="https://formspree.io/f/your-id" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="details" placeholder="Project Details"></textarea>
-        <button type="submit">Submit Appointment</button>
+<nav>
+    <div class="logo">CIVIL<span>ENGINEER</span></div>
+    <!-- Hamburger Icon using FontAwesome -->
+    <div class="menu-btn" id="menuBtn">
+        <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="booking.html">Booking</a></li>
+    </ul>
+</nav>
+
+<section class="glass-panel">
+    <h2>Schedule a Consultation</h2>
+    <form action="https://formspree.io/f/YOUR_ID" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <select name="service">
+            <option value="consultation">Project Consultation</option>
+            <option value="estimation">Cost Estimation</option>
+        </select>
+        <textarea name="message" placeholder="Project Details" rows="5"></textarea>
+        <button type="submit" class="btn-accent">Submit Request</button>
     </form>
-</main>
+</section>
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        menuBtn.classList.toggle('open');
+        
+        // Toggle between Bars and Cross icon
+        const icon = menuBtn.querySelector('i');
+        if(navLinks.classList.contains('open')) {
+            icon.classList.replace('fa-bars', 'fa-times');
+        } else {
+            icon.classList.replace('fa-times', 'fa-bars');
+        }
+    });
+</script>
