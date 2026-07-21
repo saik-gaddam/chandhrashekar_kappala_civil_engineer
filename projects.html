@@ -1,12 +1,44 @@
-<main class="container">
-    <h2>My Projects</h2>
-    <div class="project-grid">
-        <!-- Project 1 -->
-        <div class="project-card">
-            <img src="" alt="Project 1 Image">
-            <video src="" controls></video>
-            <h4>Bridge Renovation (Done)</h4>
-        </div>
-        <!-- Repeat for Project 2, 3 and Present Project -->
+
+<nav>
+    <div class="logo">CIVIL<span>ENGINEER</span></div>
+    <!-- Hamburger Icon using FontAwesome -->
+    <div class="menu-btn" id="menuBtn">
+        <i class="fas fa-bars"></i>
     </div>
-</main>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="booking.html">Booking</a></li>
+    </ul>
+</nav>
+
+<section class="glass-panel">
+    <h2>Our Projects</h2>
+    <div class="project-grid">
+        <div class="project-card">
+            <video src="VIDEO_URL" poster="THUMBNAIL_URL" width="100%" controls></video>
+            <h3>Modern Bridge Construction</h3>
+            <p>Status: Completed</p>
+        </div>
+        <!-- Repeat for current projects -->
+    </div>
+</section>
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        menuBtn.classList.toggle('open');
+        
+        // Toggle between Bars and Cross icon
+        const icon = menuBtn.querySelector('i');
+        if(navLinks.classList.contains('open')) {
+            icon.classList.replace('fa-bars', 'fa-times');
+        } else {
+            icon.classList.replace('fa-times', 'fa-bars');
+        }
+    });
+</script>
