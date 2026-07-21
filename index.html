@@ -3,41 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Civil Engineering Excellence</title>
-    <!-- Google Fonts & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Civil Engineer | Home</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div class="page-bg-container index-page">
-        <nav class="navbar">
-            <a href="index.html" class="logo">CIVIL<span>ENG</span></a>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="booking.html">Booking</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
+<body style="background-image: url('');"> <!-- Fill your BG link here -->
+    <nav>
+        <div class="logo">CE Professional</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="booking.html">Booking</a></li>
+        </ul>
+    </nav>
 
-        <header class="hero-flex-container">
-            <div class="hero-text-box">
-                <h1>Building The <span>Future</span> of Infrastructure</h1>
-                <p>Innovative civil engineering solutions designed for longevity, sustainability, and structural integrity.</p>
-                <a href="projects.html" class="knowmore-button">View My Work</a>
-            </div>
-            <div class="hero-image-box">
-                <img src="" alt="Civil Engineering" class="main-img floating"> <!-- ADD YOUR IMAGE SRC -->
-            </div>
-        </header>
-    </div>
+    <main class="container">
+        <section class="hero">
+            <h1>Building the Future</h1>
+            <p>Expert Civil Engineering solutions for modern infrastructure.</p>
+            <img src="" alt="Civil Engineer Image" style="width:100%; border-radius:10px;"> <!-- Fill Image link -->
+        </section>
+    </main>
 
-    <script src="script.js"></script>
+    <footer>
+        <div class="contact-details">
+            <p>Email: contact@engineer.com | Phone: +123456789</p>
+        </div>
+        <div class="social-icons">
+            <a href="https://wa.me/yourlink"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/yourlink"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/yourlink"><i class="fab fa-youtube"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
